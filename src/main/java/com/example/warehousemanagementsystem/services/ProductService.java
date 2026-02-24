@@ -36,7 +36,7 @@ public class ProductService {
                 .map(
                         product -> {
                             product.setQuantity(productEntity.getQuantity());
-                            return productRepository.save(productEntity);
+                            return productRepository.save(product);
                         }
                 ).orElseThrow(() -> new ResourceNotFoundException("Product not found with id " + id));
     }
